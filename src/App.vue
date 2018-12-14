@@ -1,29 +1,53 @@
 <template>
   <div id="app">
       <nav>
-        <router-link to="/">Home</router-link>
-        <router-link to="/about">About</router-link>
+        <router-link to="/datatable">Table</router-link>
+        <router-link to="/livetable">LiveTable</router-link>
+        <router-link to="/modal">Modal</router-link>
       </nav>
+
     <router-view/>
   </div>
 </template>
 
 <script>
 import Skills from './components/Skills.vue'
+import table from './components/datatable.vue'
+import search from './components/search.vue'
 
 export default {
   name: 'app',
   components: {
-    Skills
+    Skills,
+    table,
+    search
+    
+  },
+  data(){
+    return {
+      authenticated: false,
+      mockAccount: {
+        username: "Amalan",
+        password: "password",
+        user1: "Ani",
+        pass: "ani"
+      }
+    }
+  },
+  mounted() {
+    
+  },
+  methods: {
+    },
   }
-}
+
 </script>
 
 <style>
   @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
   body {
-    background-color: lightgray;
+    background-color: lightgrey;
     font-family: 'Montserrat', sans-serif;
     display: grid;
     grid-template-rows: auto;
@@ -47,6 +71,7 @@ nav a {
   body, html {
     margin: 0;
     height: 100%;
+    
 }
   #app {
     width: 50%;

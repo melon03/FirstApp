@@ -1,7 +1,7 @@
 <template>
   <div class="container">
   <form @submit.prevent="addSkill">
-    <input type="text" v-shortkey.focus="['alt', 'i'] "placeholder="0" v-model="skill" v-validate="'min:5'" name="skill" v-shortkey="['q']" @shortkey="foo()">
+    <input type="text" v-shortkey.focus="['alt', 'i'] " placeholder="Username" v-model="skill" v-validate="'min:5'" name="skill">
     <transition name="alert-in" enter-active-class="animated flipInx" leave-active-class="animated flipOutX">
       <p class="alert" v-if="errors.has('skill')">{{ errors.first('skill') }}</p>
     </transition>
